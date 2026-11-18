@@ -31,7 +31,7 @@ const partiallyInvalidFormData = {
     }
 }
 
-const invalidAddressData = {
+const invalidAddressFormData = {
     name: "A",
     email: "anna@example.com",
     age: 25,
@@ -49,11 +49,11 @@ function validateForm(formDate) {
         errors.push('Name is required');
     }
 
-    if(formDate.name && formDate.name.length > 2) {
+    if(!formDate.name && formDate.name.length > 2) {
         errors.push('Enter the valid name');
     }
 
-    if(formDate.email || formDate.email.trim() === " ") {
+    if(!formDate.email || formDate.email.trim() === " ") {
         errors.push('Email is required');
     } else if (!formDate.email.includes('@')) {
         errors.push('Please enter a valid email');
