@@ -70,10 +70,12 @@ function validateForm(formDate) {
     }
 
     if(!formDate.address.country || formDate.address.country.trim() === " ") {
+        errors.address = errors.address{};
         errors.push('Country is required');
     }
 
     if(!formDate.address.city || formDate.address.city.trim() === " ") {
+        errors.city = errors.city{};
         errors.push('City is required');
     }
 
